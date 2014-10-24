@@ -1,15 +1,15 @@
-title: Node.js
+title: Node.js 模块化开发实践
 speaker: Liu Qing
 transition: slide
 files: /js/demo.js,/css/demo.css
 
 [slide]
 
-# Node.js 模块开发
+# Node.js 模块化开发实践
 ## 演讲者：刘卿
 
 [slide]
-# Nodejs是什么？
+# Node.js是什么？
 ---
 * 服务器端运行的 Javascript {:&.moveIn}
 * 基于 V8
@@ -19,9 +19,15 @@ files: /js/demo.js,/css/demo.css
 * 大约有8000行 c/c++代码，2000行 js 代码 [Node.js](https://github.com/joyent/node)
 
 [slide]
-# 安装
+# Node.js 给前端人员带来了什么？
+---
+* 模块复用
+* 工具开发
+* 前后端分层更加明确
 
-下载[安装](http://nodejs.org/download)
+
+[slide]
+# 安装
 
 
 [slide]
@@ -37,19 +43,18 @@ console.log('Server running at http://127.0.0.1:8090/');
 ```
 
 [slide]
-# NPM (包管理器)
-```
-npm install package [-g]
-```
-[slide]
-# 模块
+# 实现一个简单的模块
 ```
 exports.add = function(){
     return 1 + 1;
 }
 ```
+
 [slide]
-## 模块缓冲
+# NPM (包管理器)
+
+[slide]
+## 模块缓存
 
 通过文件路径作为索引缓冲在 `Module._cache`对象上
 ```
@@ -61,7 +66,7 @@ Modules._extensions['.json'] = function(module, filename){
 [slide]
 # 包
 
-目录结构
+## 目录结构
 
 * package.json :  描述文件
 * bin 二进制文件
@@ -69,4 +74,6 @@ Modules._extensions['.json'] = function(module, filename){
 * doc 文档
 * test 单元测试
 
+[slide]
+# 如何开发一个命令行工具？
 
