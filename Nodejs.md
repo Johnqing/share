@@ -43,36 +43,44 @@ console.log('Server running at http://127.0.0.1:8090/');
 ```
 
 [slide]
-# 实现一个简单的模块
-```
-exports.add = function(){
-    return 1 + 1;
-}
-```
+# Node.js基础
+---
+* 模块
+* 二进制
 
-[slide]
-# NPM (包管理器)
-
-[slide]
-## 模块缓存
-
-通过文件路径作为索引缓冲在 `Module._cache`对象上
-```
-Modules._extensions['.json'] = function(module, filename){
-    ...
-}
-```
 
 [slide]
 # 包
 
 ## 目录结构
+```
+- app                               # 工程目录
+    - bin/                          # 存放命令行相关代码
+        node-dos
+    + doc/                          # 存放文档
+    - lib/                          # 存放API相关代码
+        core.js
+    - node_modules/                 # 存放三方包
 
-* package.json :  描述文件
-* bin 二进制文件
-* lib js核心文件
-* doc 文档
-* test 单元测试
+    + test/                         # 存放测试用例
+    package.json                    # 元数据文件
+    README.md                       # 说明文件
+```
+
+[slide]
+# NPM (包管理器)
+* 下载包
+* 下载命令行工具
+* 上传包/命令行工具
+
+[slide]
+# fs文件系统
+* Buffer
+* Stream
+* File System
+* Path
+
+通过**iconv-lite**来转换编码
 
 [slide]
 # 如何开发一个命令行工具？
