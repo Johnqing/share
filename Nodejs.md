@@ -1,30 +1,34 @@
-title: Node.js 模块化开发实践
+title: Node.js一小步，前端一大步
 speaker: Liu Qing
 transition: slide
 files: /js/demo.js,/css/demo.css
 
 [slide]
 
-# Node.js 模块化开发实践
+# Node.js一小步，前端一大步
 ## 演讲者：刘卿
 
 [slide]
 # Node.js是什么？
 ---
 * 服务器端运行的 Javascript {:&.moveIn}
-* 基于 V8
-* 事件驱动
-* 异步I/O
 * 扩展js语义：增加了模块化
 * 大约有8000行 c/c++代码，2000行 js 代码 [Node.js](https://github.com/joyent/node)
 
 [slide]
-# Node.js 给前端人员带来了什么？
+# Node.js 优势？
 ---
-* 模块复用
-* 工具开发
-* 前后端分层更加明确
+* 基于 V8
+* 事件驱动
+* 异步I/O
+* 符合前端团队的能力模型
+* 前后端代码及模块共用
 
+[slide]
+# Node.js 劣势？
+* 不适合CPU密集型
+* 技术未成熟，发展快，模块多选择困难
+* 反人类的多层闭包嵌套造成代码可读性差
 
 [slide]
 # 安装
@@ -43,11 +47,10 @@ console.log('Server running at http://127.0.0.1:8090/');
 ```
 
 [slide]
-# Node.js基础
+# 应用
 ---
-* 模块
-* 二进制
-
+* 前后端分离
+* 命令行工具/包
 
 [slide]
 # 包
@@ -74,14 +77,31 @@ console.log('Server running at http://127.0.0.1:8090/');
 * 上传包/命令行工具
 
 [slide]
-# fs文件系统
-* Buffer
-* Stream
-* File System
-* Path
+# 前端集成方案
 
-通过**iconv-lite**来转换编码
+Why?
 
 [slide]
-# 如何开发一个命令行工具？
+# 目前实现的集成工具
+<img src="/nodejs/fe-build.jpg">
 
+[slide]
+# 前后端分离
+## What?
+
+后端只提供数据，前端负责展现
+
+[slide]
+# SPA 
+* SPA用例不多，问题多多
+* 后端还是处理了一些展现的逻辑
+
+[slide]
+# 目前使用最多的分离方式
+<img src="/nodejs/fe-end.png">
+
+[slide]
+# 为什么使用Node.js做为中间件？
+* 模块共用
+* 前端最熟悉的语言
+* 容易切换开发模式
