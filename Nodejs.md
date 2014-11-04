@@ -11,6 +11,8 @@ files: /js/demo.js,/css/demo.css
 [slide]
 # Node.js是什么？
 ---
+> 业界写法 Node.js/Nodejs/Node
+
 * 服务器端运行的 Javascript {:&.moveIn}
 * 扩展js语义：增加了模块化
 * 大约有8000行 c/c++代码，2000行 js 代码 [Node.js](https://github.com/joyent/node)
@@ -37,13 +39,13 @@ files: /js/demo.js,/css/demo.css
 var http = require('http');
 http.createServer(function(req, res){
     res.writeHead(200, {'Content-Type': 'text/plain'}); 
-    res.end('First Demo！'); 
+    res.end('hellow wolrd!'); 
 }).listen(8090, '127.0.0.1');
 console.log('Server running at http://127.0.0.1:8090/');
 ```
 
 [slide]
-# 应用
+# 目前主流应用
 ---
 * 自动化工具
 * 前后端分离 
@@ -54,22 +56,19 @@ console.log('Server running at http://127.0.0.1:8090/');
 * 不支持预编译工具 {:&.moveIn}
 * 自动编译
 * 远程调试
-* 自定义语法
+* 压缩规则可配
 * 自动刷新
 * 自动部署
 * 前后端联调成本过高
-* 重复的模块，和工作太多
+* 重复的模块和工作太多
 * 页面零散，不方便管理
 * 现有工具的弊端
 
 [slide]
-# 360币UI改版
+# 前期
 
-## 将前端common从svn中脱离
-
-1. UI组件
-2. 模块化
-
+* 编译less、coffeescript的脚本
+* 抽离js公共组件和模块，形成UI组件库，通过Nodejs编译不同的模块组合到需要的项目
 ```
 common
   ├─demo # demo示例目录，不上线
@@ -84,6 +83,20 @@ common
   │  └─nt.js      # js模板引擎
   └─build.js      # nodejs工具
 ```
+[slide]
+
+# 理财2期遇到的问题
+
+* 开发环境无法走完整个流程 {:&.moveIn}
+* 编译脚本每次都要手动执行
+* 需要部署到开发环境，然后在通过脚本部署到测试环境
+* 现有燕尾服，不支持压缩规则自定义
+* 开发时，需要频繁的刷新页面
+
+[slide]
+# 思考
+
+> 为什么不把这些零散的工具组合起来，形成一套完整的工作流
 
 [slide]
 # 理财二期
@@ -91,7 +104,7 @@ common
 
 [slide]
 
-# 木有解决的问题
+# 待解决问题
 * smarty公共模块抽离
 * 前端受限于服务端的开发时间
 * 零散的需求，散落在各个地方
